@@ -78,7 +78,7 @@ export default function Home({ category }) {
           }}
         >
           <div
-            className="bg-primary text-white h-[750px] rounded-lg pb-20 relative shadow-lg"
+            className="bg-primary text-white h-[800px] rounded-lg pb-20 relative shadow-lg"
             onClick={(e) => e.stopPropagation()}
           >
             <button
