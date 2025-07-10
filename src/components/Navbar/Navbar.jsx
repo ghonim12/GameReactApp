@@ -1,3 +1,4 @@
+import { useState } from "react";
 import logo from "../../assets/imgi_2_logo-sm.png";
 export default function Navbar({ onLinkClick }) {
   const [isOpen, setIsOpen] = useState(false);
