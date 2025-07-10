@@ -11,7 +11,7 @@ export default function Home({ category }) {
   async function getGame() {
     try {
       setIsLoading(true);
-      const res = await axios.get(`/api/api/games?category=${category}`);
+      const res = await axios.get(`/api/games?category=${category}`);
       console.log(res.data, "data");
       setGame(Array.isArray(res.data) ? res.data : []);
       setIsLoading(false);
@@ -30,7 +30,7 @@ export default function Home({ category }) {
   async function getGameDetails(id) {
     if (!id) return;
     try {
-      const res = await axios.get(`/api/api/game?id=${id}`);
+      const res = await axios.get(`/api/game?id=${id}`);
       setIdGame(res.data);
     } catch (error) {
       console.log(error);
