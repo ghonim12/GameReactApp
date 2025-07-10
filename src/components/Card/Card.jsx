@@ -4,7 +4,7 @@ export default function Card(props) {
     <>
       <div
         onClick={props.onClick}
-        className="bg-primary duration-500 hover:scale-110 my-1 cursor-pointer"
+        className="bg-primary duration-500 hover:scale-110 my-1 cursor-pointer "
       >
         <div className="w-full max-w-sm border rounded-lg shadow-sm border-[#202328]">
           <div>

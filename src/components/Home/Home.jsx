@@ -53,8 +53,8 @@ export default function Home({ category }) {
       ) : (
         <>
           <div className="relative">
-            <div className="w-[80%] mx-auto py-20 ">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div className="w-[90%] mx-auto py-10 md:py-20 ">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-8">
                 {Array.isArray(game) &&
                   game?.map((game) => (
                     <Card
@@ -71,14 +71,14 @@ export default function Home({ category }) {
 
       {selectedId && idGame && (
         <div
-          className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center overflow-auto"
+          className="fixed inset-0 z-50 bg-primary flex items-center justify-center overflow-auto"
           onClick={() => {
             setSelectedId(null);
             setIdGame(null);
           }}
         >
           <div
-            className="bg-primary text-white rounded-lg p-6 relative shadow-lg"
+            className="bg-primary text-white h-[730px] rounded-lg pb-20 relative shadow-lg"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -133,11 +133,13 @@ export default function Home({ category }) {
                 <p className="space-x-2">
                   <span className="font-extrabold">Description:</span>
                   <span className="text-gray-300">
-                    {idGame.description.slice(0, 800)}
+                    {idGame.description}
+                    {/* .slice(0, 300) */}
                   </span>
                 </p>
 
-                <a
+               <div className="pb-10">
+                 <a
                   href={idGame.game_url}
                   target="_blank"
                   rel="noreferrer"
@@ -145,6 +147,7 @@ export default function Home({ category }) {
                 >
                   Show Game
                 </a>
+               </div>
               </div>
             </div>
           </div>
