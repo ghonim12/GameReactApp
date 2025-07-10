@@ -43,7 +43,7 @@ export default function Home({ category }) {
 
   return (
     <>
-      <h1  className="text-white decoration-white underline text-center text-5xl my-5 ">
+      <h1  className="text-white text-center text-5xl my-5 ">
         Click On Links&#9757;
       </h1>
       {isLoading ? (
