@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+@theme {
+  --color-primary: #272b30;
+  --color-nav: #3a497b;
+  --color-navItem: #0395c8;
+}
