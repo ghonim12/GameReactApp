@@ -43,25 +43,31 @@ export default function Home({ category }) {
 
   return (
     <>
-      {isLoading && (
-        <h1 className="text-white decoration-white underline text-center w-[60%] mx-auto text-5xl mt-5 ">
-          Click On Links&#9757;
-        </h1>
-      )}
-      <div className="relative">
-        <div className="w-[80%] mx-auto py-20 ">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {Array.isArray(game) &&
-              game?.map((game) => (
-                <Card
-                  gameItem={game}
-                  key={game.id}
-                  onClick={() => setSelectedId(game.id)}
-                />
-              ))}
-          </div>
+      <h1  className="text-white decoration-white underline text-center text-5xl my-5 ">
+        Click On Links&#9757;
+      </h1>
+      {isLoading ? (
+        <div className="flex items-center justify-center h-screen bg-black/50">
+          <ClipLoader color="#ff6a00" size={60} speedMultiplier={0.8} />
         </div>
-      </div>
+      ) : (
+        <>
+          <div className="relative">
+            <div className="w-[80%] mx-auto py-20 ">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                {Array.isArray(game) &&
+                  game?.map((game) => (
+                    <Card
+                      gameItem={game}
+                      key={game.id}
+                      onClick={() => setSelectedId(game.id)}
+                    />
+                  ))}
+              </div>
+            </div>
+          </div>
+        </>
+      )}
 
       {selectedId && idGame && (
         <div
